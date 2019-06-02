@@ -24,6 +24,26 @@ sys.path.insert(0, os.path.abspath('../src'))
 
 import {{ cookiecutter.project_slug }}
 
+
+# -- Extensions to the  Napoleon GoogleDocstring class ---------------------
+
+"""
+this snippit is in part from michael gorez's post 
+https://michaelgoerz.net/notes/extending-sphinx-napoleon-docstring-sections.html
+here we just want to assure the more compact ivar style class attibutes are still called `Attributes` 
+( instead of variables which is napoleans default )
+"""
+
+from sphinx.ext.napoleon.docstring import GoogleDocstring
+
+
+def parse_attributes_section(self, section):
+    return self._format_fields('Attributes', self._consume_fields())
+
+
+GoogleDocstring._parse_attributes_section = parse_attributes_section
+
+
 # -- General configuration ---------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
