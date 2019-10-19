@@ -3,7 +3,7 @@
   "email": "leaprovenzano@gmail.com",
   "github_username": "leaprovenzano",
   "repo_name": "your_repo_name_here",
-  "project_slug": "{{ cookiecutter.repo_name.str.lower().replace('-', '_') }}",
+  "project_slug": "{{ cookiecutter.repo_name.lower().replace('-', '_') }}",
   "project_name": "{{ cookiecutter.project_slug.replace('_', ' ').title() }}",
   "project_short_description": "{{ cookiecutter.project_name }} : a package for doing stuff",
   "pypi_username": "{{ cookiecutter.github_username }}",
