@@ -11,7 +11,7 @@ repos:
     rev: v2.3.0
     hooks:
     - id: flake8
-      additional_dependencies: [flake8-bugbear, flake8-eradicate]
+      additional_dependencies: [flake8-bugbear, flake8-eradicate, pep8-naming]
     - id: check-json
     - id: pretty-format-json
     - id: check-ast
