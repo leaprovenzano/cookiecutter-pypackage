@@ -51,7 +51,7 @@ clean-test: clean-pyc## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint: ## check style with flake8
-	flake8 {{ cookiecutter.project_slug }} tests
+	flake8 src/{{ cookiecutter.project_slug }} tests
 
 test: ## run tests quickly with the default Python
 	py.test --cov src/{{ cookiecutter.project_slug }} 
@@ -86,4 +86,10 @@ install: clean ## install the package to the active Python's site-packages
 
 install-local: clean ## install the package to the active Python's site-packages
 	pip install -e .
+
+install-dev: install-local ## setup all
+	pip install -r requirements_dev.txt
+	pre-commit install
+
+
 
