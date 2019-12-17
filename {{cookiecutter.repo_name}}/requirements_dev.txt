@@ -1,21 +1,19 @@
-bumpversion==0.5.3
-watchdog==0.9.0
-{% if cookiecutter.command_line_interface == 'y' -%}
-click==6.7{% endif %}
+bumpversion
+watchdog
 
 # docs
-Sphinx>=1.8.1
+Sphinx
 sphinx_rtd_theme
 sphinxcontrib-napoleon
 
 # packaging and builds
-twine==1.12.1
-tox==3.5.2
+twine
+tox
 
 # tests
-pytest==3.8.2
-pytest-runner==4.2
-coverage==4.5.1
+pytest
+pytest-runner
+coverage
 hypothesis
 pytest-cov
 
@@ -24,6 +22,8 @@ flake8>=3.5.0
 flake8-bugbear
 flake8-eradicate
 pep8-naming
+# type checking
+mypy
 
 # pre-commit 
 pre-commit
