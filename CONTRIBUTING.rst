@@ -1,108 +1,236 @@
-.. _issues: https://github.com/leaprovenzano/{{ cookiecutter.repo_name }}/issues
-
 ============
 Contributing
 ============
 
-Step 1 : File an issue
+Contributions are welcome, and they are greatly appreciated! Every little bit
+helps, and credit will always be given.
+
+You can contribute in many ways:
+
+Types of Contributions
 ----------------------
 
-All contributions (with the possible exception of minor documentation changes) should start in `issues`_ .
-Hashing out changes and discussion an issue means no ones time is wasted writing PRs that are not accepted.
+Report Bugs
+~~~~~~~~~~~
 
-If you'd like to work on your issue please be sure and mention that when you create it.
-That way we can assign it to you once the work is accepted.
+Report bugs at https://github.com/audreyr/cookiecutter-pypackage/issues
 
-Report Bugs:
-~~~~~~~~~~~~
-
-Report bugs in our `issues`_. If you are reporting a bug, please include:
+If you are reporting a bug, please include:
 
 * Your operating system name and version.
-* Any details about your local setup that might be helpful in troubleshooting. This must include your version of python and {{ cookiecutter.project_name }}
-* A minimal example that will reproduce the bug.
+* Any details about your local setup that might be helpful in troubleshooting.
+* Detailed steps to reproduce the bug.
 
+Fix Bugs
+~~~~~~~~
 
-Suggest featues:
-~~~~~~~~~~~~~~~~
+Look through the GitHub issues for bugs. Anything tagged with "bug"
+and "help wanted" is open to whoever wants to implement a fix for it.
 
-Suggest features in our `issues`_. PRs for new features will not be accepted without some discussion in an issue.
-Feature suggestions should include details of the feature and why you think it would be useful.
+Implement Features
+~~~~~~~~~~~~~~~~~~
 
-A really nice way of outlining a bit of new functionality is to write a little type-hinted stub with a (preferably google style) docstring including
-doctest examples. Contributors are encouraged to suggest features in this way.
+Look through the GitHub issues for features. Anything tagged with "enhancement"
+and "help wanted" is open to whoever wants to implement it.
 
+Write Documentation
+~~~~~~~~~~~~~~~~~~~
 
-Existing Issues:
-~~~~~~~~~~~~~~~~
+Cookiecutter PyPackage could always use more documentation, whether as part of
+the official docs, in docstrings, or even on the web in blog posts, articles,
+and such.
 
-If you see a "help wanted" tag and want to work on it just give us a shout and we will assign it to you.
+Submit Feedback
+~~~~~~~~~~~~~~~
 
+The best way to send feedback is to file an issue at
+https://github.com/audreyr/cookiecutter-pypackage/issues.
 
-Pull Requests:
+If you are proposing a new feature:
+
+* Explain in detail how it would work.
+* Keep the scope as narrow as possible, to make it easier to implement.
+* Remember that this is a volunteer-driven project, and that contributions
+  are welcome :)
+
+Get Started!
+------------
+
+Ready to contribute? Here's how to set up `cookiecutter-pypackage` for local
+development. Please note this documentation assumes you already have
+`virtualenv` and `Git` installed and ready to go.
+
+1. Fork the `cookiecutter-pypackage` repo on GitHub.
+
+::
+
+2. Clone your fork locally:
+
+   .. code-block:: bash
+
+    $ cd path_for_the_repo
+    $ git clone git@github.com:YOUR_NAME/cookiecutter-pypackage.git
+
+::
+
+3. Assuming you have virtualenv installed (If you have Python3.5 this should
+   already be there), you can create a new environment for your local
+   development by typing:
+
+   .. code-block:: bash
+
+        $ virtualenv cookiecutter-pypackage-env
+        $ source cookiecutter-pypackage-env/bin/activate
+
+   This should change the shell to look something like:
+
+   .. code-block:: bash
+
+        (cookiecutter-pypackage-env) $
+
+::
+
+4. Create a branch for local development:
+
+   .. code-block:: bash
+
+        $ git checkout -b name-of-your-bugfix-or-feature
+
+   Now you can make your changes locally.
+
+::
+
+5. When you're done making changes, check that your changes pass flake8. Since,
+   this package contains mostly templates the flake should be run for tests
+   directory:
+
+   .. code-block:: bash
+
+        $ flake8 ./tests
+
+::
+
+6. The next step would be to run the test cases. `cookiecutter-pypackage` uses
+   pytest, you can run PyTest. Before you run pytest you should ensure all
+   dependancies are installed:
+
+   .. code-block:: bash
+
+        $ pip install -rrequirements_dev.txt
+        $ pytest ./tests
+
+   If you get any errors while installing cryptography package (something like
+   `#include <openssl/aes.h>`). Please update your pip version and try again:
+
+   .. code-block:: bash
+
+        # Update pip
+        $ pip install -U pip
+
+::
+
+7. Before raising a pull request you should also run tox. This will run the
+   tests across different versions of Python:
+
+   .. code-block:: bash
+
+        $ tox
+
+   If you are missing flake8, pytest and/or tox, just `pip install` them into
+   your virtualenv.
+
+::
+
+8. If your contribution is a bug fix or new feature, you may want to add a test
+   to the existing test suite. See section Add a New Test below for details.
+
+::
+
+9. Commit your changes and push your branch to GitHub:
+
+   .. code-block:: bash
+
+        $ git add .
+        $ git commit -m "Your detailed description of your changes."
+        $ git push origin name-of-your-bugfix-or-feature
+
+::
+
+10. Submit a pull request through the GitHub website.
+
+::
+
+Pull Request Guidelines
+-----------------------
+
+Before you submit a pull request, check that it meets these guidelines:
+
+1. The pull request should include tests.
+
+2. If the pull request adds functionality, the docs should be updated. Put your
+   new functionality into a function with a docstring, and add the feature to
+   the list in README.rst.
+
+3. The pull request should work for Python 2.7, 3.5, 3.6 and 3.7, and for PyPy. Check
+   https://travis-ci.org/audreyr/cookiecutter-pypackage/pull_requests and
+   make sure that the tests pass for all supported Python versions.
+
+Add a New Test
 --------------
 
-If you've been assigned an issue and you'd like to get started here's how to go about making a PR:
+When fixing a bug or adding features, it's good practice to add a test to
+demonstrate your fix or new feature behaves as expected. These tests should
+focus on one tiny bit of functionality and prove changes are correct.
 
+To write and run your new test, follow these steps:
 
-Setting up for local development:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Add the new test to `tests/test_bake_project.py`. Focus your test on the
+   specific bug or a small part of the new feature.
 
-1. Fork the {{ cookiecutter.project_name }} repo on GitHub.
-2. Clone your fork locally::
+::
 
-    $ git clone git@github.com:your_name_here/{{ cookiecutter.repo_name }}.git
+2. If you have already made changes to the code, stash your changes and confirm
+   all your changes were stashed:
 
-3. Install your local copy into a virtualenv::
+   .. code-block:: bash
 
-    $ python3 -m {{ cookiecutter.repo_name }}/env
-    $ cd {{ cookiecutter.repo_name }}
-    $ source env/bin/activate
-    $ pip install -e .
+        $ git stash
+        $ git stash list
 
-4. You'll also want to install some dev dependencies.
-   We seperate in the requirements directory into test, docs, & dev for the sake of CI.
-   To install all the dependencies you can simply::
+::
 
-    $ pip install -r requirements/all.txt
+3. Run your test and confirm that your test fails. If your test does not fail,
+   rewrite the test until it fails on the original code:
 
-3. Install the pre-commit hooks. These will reformat your code using lea's special version of black
-   do mypy and pep8 checks and generally complain at you if you try and commit something they hate. Doing
-   This means that stuff will be formatted correctly and will not set off linting errors in your PR::
+   .. code-block:: bash
 
-   $ pip install pre-commit
-   $ pre-commit install
+        $ pytest ./tests
 
-PR Guidelines:
-~~~~~~~~~~~~~~
+::
 
-* PR's should contain one and only one logical change. It's perfectly fine to open multiple PRs (or multiple issues) for a large bit of work.
+4. (Optional) Run the tests with tox to ensure that the code changes work with
+   different Python versions:
 
-* PR's should not change or add anything not referenced in the original issue.
+   .. code-block:: bash
 
-* PR's should usually contain a little description of the changes for reviewers to read
-  and should always link to the original issue.
+        $ tox
 
-* All features and bug fixes must have a user friendly high level description of the changes
-  entered into the /HISTORY.rst.If a new version will be created make it in the same format
-  you see below. This is currently a bit annoying but we will work out a better solution soon.
+::
 
-* All new public functions and classes code must have docstrings in the google style. Docstrings should
-  include examples that can be run as doctests.
+5. Proceed work on your bug fix or new feature or restore your changes. To
+   restore your stashed changes and confirm their restoration:
 
-* All new features must have tests and all bug fixes must provide regression tests.
+   .. code-block:: bash
 
-* Type hints should be added wherever possible.
+        $ git stash pop
+        $ git stash list
 
-* New Contributors should update the AUTHORS.rst with their name in the contributors section.
+::
 
-* Make a sensible branch name. it's also encouraged to use the following prefixes::
+6. Rerun your test and confirm that your test passes. If it passes,
+   congratulations!
 
-    feature/
-    bugfix/
+.. cookiecutter: https://github.com/audreyr/cookiecutter-pypackage
+.. virtualenv: https://virtualenv.pypa.io/en/stable/installation
+.. git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
-* Make decent descriptive commit messages.
-
-* Try and keep commits small. This is particularly true when pre-commit hooks in place.
-
-* Documentation updates may not need several of the above requirements and can PRS can be opened without an issue.
