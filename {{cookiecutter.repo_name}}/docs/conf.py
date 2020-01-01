@@ -15,7 +15,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath('../src'))
 
-import '{{ cookiecutter.project_name }}'
+import {{ cookiecutter.project_slug }}
 
 # -- Project information -----------------------------------------------------
 
@@ -25,7 +25,7 @@ author = collectionish.__author__
 
 
 # The full version, including alpha/beta/rc tags
-release = '{{ cookiecutter.project_name }}'.__version__
+release = {{ cookiecutter.project_slug }}.__version__
 
 
 # -- General configuration ---------------------------------------------------
