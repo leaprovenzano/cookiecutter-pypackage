@@ -54,7 +54,7 @@ lint: ## check style with flake8
 	flake8 src/{{ cookiecutter.project_slug }} tests
 
 test: ## run tests quickly with the default Python
-	py.test --cov src/{{ cookiecutter.project_slug }} 
+	py.test --cov src/{{ cookiecutter.project_slug }}
 
 test-all: ## run tests on every Python version with tox
 	tox
@@ -66,14 +66,12 @@ coverage: ## check code coverage quickly with the default Python
 	$(BROWSER) htmlcov/index.html
 
 docs: ## generate Sphinx HTML documentation, including API docs
-	rm -f docs/{{ cookiecutter.project_slug }}.rst
-	rm -f docs/modules.rst
-	sphinx-apidoc -fMl -o docs/ src/{{ cookiecutter.project_slug }}
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	$(BROWSER) docs/_build/html/index.html
 
 release: dist ## package and upload a release
+	twine check dist/*
 	twine upload dist/*
 
 dist: clean ## builds source and wheel package
@@ -88,8 +86,5 @@ install-local: clean ## install the package to the active Python's site-packages
 	pip install -e .
 
 install-dev: install-local ## setup all
-	pip install -r requirements_dev.txt
+	pip install -r requirements/all.txt
 	pre-commit install
-
-
-
