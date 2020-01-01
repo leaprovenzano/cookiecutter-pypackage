@@ -8,7 +8,7 @@ import {{ cookiecutter.project_slug }}
 def is_valid_semver(version: str) -> bool:
     """return True if a value is a valid semantic version
     """
-    match = re.match(r'^[0-9]+\.[0-9]+\.[0-9]+(-([0-9a-z]+(\.[0-9a-z]+)*))?$', string)
+    match = re.match(r'^[0-9]+\.[0-9]+\.[0-9]+(-([0-9a-z]+(\.[0-9a-z]+)*))?$', version)
     return match is not None
 
 
