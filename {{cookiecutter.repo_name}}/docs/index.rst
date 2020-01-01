@@ -1,20 +1,23 @@
-Welcome to {{ cookiecutter.project_name }}'s documentation!
-======================================
+{{ cookiecutter.project_name }} docs
+====================================
+
+.. include:: ../README.rst
+
+.. currentmodule:: {{ cookiecutter.project_slug }}
+
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   readme
-   installation
-   usage
-   {{ cookiecutter.project_slug }}
-   contributing
-   {% if cookiecutter.create_author_file == 'y' -%}authors
-   {% endif -%}history
+.. autosummary::
+   :toctree: _autosummary
+   
+
 
 Indices and tables
 ==================
+
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
