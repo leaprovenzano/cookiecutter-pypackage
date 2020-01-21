@@ -21,7 +21,7 @@ import {{ cookiecutter.project_slug }}
 
 project = '{{ cookiecutter.project_name }}'
 copyright = "{% now 'local', '%Y' %}, {{ cookiecutter.full_name }}"
-author = collectionish.__author__
+author = {{ cookiecutter.project_slug }}.__author__
 
 
 # The full version, including alpha/beta/rc tags
