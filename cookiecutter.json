@@ -8,10 +8,26 @@
   "project_short_description": "{{ cookiecutter.project_name }} : a package for doing stuff",
   "pypi_username": "{{ cookiecutter.github_username }}",
   "version": "0.0.0",
-  "add_pyup_badge": "n",
-  "command_line_interface": ["No command-line interface", "Click"],
+  "command_line_interface": [
+    "No command-line interface",
+    "Click"
+  ],
   "create_author_file": "y",
-  "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"],
-  "make_virtualenv": [true, false]
-
+  "open_source_license": [
+    "MIT license",
+    "BSD license",
+    "ISC license",
+    "Apache Software License 2.0",
+    "GNU General Public License v3",
+    "Not open source"
+  ],
+  "make_virtualenv": [
+    true,
+    false
+  ],
+  "main_branch": "main",
+  "codecov": "y",
+  "travis": "y",
+  "pypi": "y",
+  "rtd": "y"
 }
