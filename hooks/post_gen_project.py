@@ -23,3 +23,6 @@ if __name__ == '__main__':
 
     if '{{ cookiecutter.rtd }}' != 'y':
         remove_file('.readthedocs.yaml')
+
+    if '{{ cookiecutter.travis }}' != 'y':
+        remove_file('.readthedocs.yaml')
