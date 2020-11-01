@@ -1,15 +1,11 @@
 .. include:: readme.rst
 
-.. currentmodule:: keyedtensor
+.. currentmodule:: {{ cookiecutter.project_slug }}
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   KeyedTensor
-   ops
-   hooks
-   KeyedSize
    contributing
    authors
 
