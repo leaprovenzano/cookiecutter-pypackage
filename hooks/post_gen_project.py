@@ -25,4 +25,4 @@ if __name__ == '__main__':
         remove_file('.readthedocs.yaml')
 
     if '{{ cookiecutter.travis }}' != 'y':
-        remove_file('.readthedocs.yaml')
+        remove_file('.travis.yaml')
