@@ -3,15 +3,22 @@ cache:
   directories:
   - "$HOME/.cache/pip"
 python:
-- 3.6
 - 3.7
 - 3.8
+- 3.9
 install:
 - pip install -r requirements/test.txt
 - pip install -r requirements/dev.txt
+{% if cookiecutter.codecov == 'y' -%}
+after_success:
+- pip install codecov
+{% endif -%}
 - pip install .
 script:
 - flake8
-- mypy src/{{ cookiecutter.project_slug }}
+- mypy src/{{ cookiecutter.project_slug }} --follow-imports=silent --ignore-missing-imports
 - pytest
-- make dist && twine check dist/*
+{% if cookiecutter.codecov == 'y' -%}
+after_success:
+- codecov
+{% endif -%}
