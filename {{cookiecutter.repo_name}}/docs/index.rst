@@ -1,23 +1,22 @@
-{{ cookiecutter.project_name }} docs
-====================================
+.. include:: readme.rst
 
-.. include:: ../README.rst
-
-.. currentmodule:: {{ cookiecutter.project_slug }}
-
+.. currentmodule:: keyedtensor
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-.. autosummary::
-   :toctree: _autosummary
-   
+   KeyedTensor
+   ops
+   hooks
+   KeyedSize
+   contributing
+   authors
+
 
 
 Indices and tables
 ==================
-
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
