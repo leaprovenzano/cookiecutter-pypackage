@@ -8,7 +8,7 @@ from setuptools import setup, find_packages
 with open('README.rst') as readme_file:
     readme = readme_file.read()
 
-with open('requirements.txt') as f:
+with open('requirements.md') as f:
     requirements = f.read().splitlines()
 
 
@@ -52,7 +52,7 @@ setup(
     license="{{ cookiecutter.open_source_license }}",
 {%- endif %}
     long_description=readme,
-    long_description_content_type='text/x-rst',
+    long_description_content_type='text/markdown',
     include_package_data=True,
     keywords='{{ cookiecutter.project_slug }}',
     name='{{ cookiecutter.project_slug }}',
